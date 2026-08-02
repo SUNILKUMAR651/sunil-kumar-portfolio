@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="description" content="Sunil — Senior Full-Stack Developer & 3D Web Creative" />
-  <title>Sunil | 3D Interactive Portfolio</title>
-  
+  <meta name="description"
+    content="Sunil Kumar — AI Engineer, Full Stack Developer, Flutter Developer & IoT Specialist" />
+  <title>Sunil Kumar | AI Engineer &amp; Full Stack Developer</title>
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
   <!-- Icons & Three.js CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -18,6 +22,7 @@
   <!-- Merged Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="dark-mode">
 
   <!-- Custom Pointer (Desktop) -->
@@ -32,27 +37,50 @@
   <div class="glow-orb orb-2"></div>
   <div class="glow-orb orb-3"></div>
 
+  <!-- Dynamic Theme Color Picker Widget -->
+  <div class="theme-picker" id="themePicker">
+    <button class="theme-picker-toggle" id="themeToggleBtn" aria-label="Customize Theme Color">
+      <i class="fas fa-palette"></i>
+    </button>
+    <div class="theme-options" id="themeOptions">
+      <span class="theme-opt opt-purple active" data-hue="250" title="Cyber Purple"></span>
+      <span class="theme-opt opt-teal" data-hue="175" title="Emerald Cyan"></span>
+      <span class="theme-opt opt-pink" data-hue="330" title="Electric Pink"></span>
+      <span class="theme-opt opt-gold" data-hue="40" title="Sunset Gold"></span>
+    </div>
+  </div>
+
   <!-- ============ NAVBAR ============ -->
   <header class="header" id="header">
     <nav class="navbar container">
       <a href="#home" class="nav-logo">
-        <span class="logo-box">S</span>
+        <span class="logo-box">SK</span>
         <span class="logo-text">SUNIL<span class="dot">.</span>DEV</span>
       </a>
 
       <div class="nav-menu" id="navMenu">
         <ul class="nav-list">
-          <li class="nav-item"><a href="#home" class="nav-link active"><i class="fas fa-home"></i> <span>Home</span></a></li>
+          <li class="nav-item"><a href="#home" class="nav-link active"><i class="fas fa-home"></i> <span>Home</span></a>
+          </li>
           <li class="nav-item"><a href="#about" class="nav-link"><i class="fas fa-user"></i> <span>About</span></a></li>
-          <li class="nav-item"><a href="#experience" class="nav-link"><i class="fas fa-briefcase"></i> <span>Timeline</span></a></li>
-          <li class="nav-item"><a href="#skills" class="nav-link"><i class="fas fa-code"></i> <span>Skills</span></a></li>
-          <li class="nav-item"><a href="#projects" class="nav-link"><i class="fas fa-layer-group"></i> <span>Projects</span></a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link"><i class="fas fa-paper-plane"></i> <span>Contact</span></a></li>
+          <li class="nav-item"><a href="#education" class="nav-link"><i class="fas fa-graduation-cap"></i>
+              <span>Education</span></a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link"><i class="fas fa-code"></i> <span>Skills</span></a>
+          </li>
+          <li class="nav-item"><a href="#projects" class="nav-link"><i class="fas fa-layer-group"></i>
+              <span>Projects</span></a></li>
+          <li class="nav-item"><a href="#faq" class="nav-link"><i class="fas fa-question-circle"></i>
+              <span>FAQ</span></a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link"><i class="fas fa-paper-plane"></i>
+              <span>Contact</span></a></li>
         </ul>
         <div class="nav-close" id="navClose"><i class="fas fa-times"></i></div>
       </div>
 
       <div class="nav-actions">
+        <button class="btn btn-glass btn-sm desktop-only" id="navViewResumeBtn">
+          <i class="fas fa-file-pdf"></i> <span>Resume</span>
+        </button>
         <a href="#contact" class="btn btn-glow btn-sm desktop-only">
           <span>Hire Me</span> <i class="fas fa-arrow-right"></i>
         </a>
@@ -69,46 +97,64 @@
       <div class="container grid hero-container">
         <div class="hero-data">
           <div class="hero-badge tilt-card">
-            <span class="pulse-dot"></span> Available for Freelance & Full-Time
+            <span class="pulse-dot"></span> Available for Freelance, Internships &amp; Full-Time
           </div>
           <h1 class="hero-title">
-            Crafting <span class="gradient-text 3d-text">Digital</span><br />
-            &amp; <span class="accent-text">Interactive 3D</span><br />
-            Web Experiences
+            Hi, I'm <span class="gradient-text 3d-text">Sunil Kumar</span>
           </h1>
           <div class="hero-subtitle">
-            I am a <span class="typewriter-text" id="typewriter"></span>
+            I am an <span class="typewriter-text" id="typewriter"></span>
           </div>
           <p class="hero-description">
-            Transforming vision into high-performance, pixel-perfect 3D digital products with cutting-edge web tools, smooth micro-interactions, and robust modern architectures.
+            Building AI-powered applications, intelligent automation systems, and scalable digital products that solve
+            real-world problems. Computer Science Engineering student passionate about turning innovative ideas into
+            practical software.
           </p>
+
+          <!-- Current Focus Pills -->
+          <div class="current-focus-wrap">
+            <span class="focus-title"><i class="fas fa-crosshairs"></i> Current Focus:</span>
+            <div class="focus-tags">
+              <span class="focus-pill">AI &amp; AI Agents</span>
+              <span class="focus-pill">Flutter App Dev</span>
+              <span class="focus-pill">Full Stack Web</span>
+              <span class="focus-pill">IoT &amp; Embedded</span>
+              <span class="focus-pill">AI Automation (n8n)</span>
+              <span class="focus-pill">Prompt Engineering</span>
+              <span class="focus-pill">UI/UX Design</span>
+            </div>
+          </div>
 
           <div class="hero-buttons">
             <a href="#projects" class="btn btn-primary tilt-card">
-              <span>Explore Projects</span>
+              <span>View My Projects</span>
               <i class="fas fa-rocket"></i>
             </a>
-            <a href="#contact" class="btn btn-glass tilt-card">
-              <span>Let's Connect</span>
+            <button class="btn btn-glass tilt-card" id="heroViewResumeBtn">
+              <span>View Resume</span>
+              <i class="fas fa-file-pdf"></i>
+            </button>
+            <a href="#contact" class="btn btn-glow tilt-card">
+              <span>Hire Me / Let's Work</span>
               <i class="fas fa-paper-plane"></i>
             </a>
           </div>
 
           <div class="hero-stats grid">
             <div class="stat-card tilt-card">
-              <h3 class="stat-number" data-target="25">0</h3>
+              <h3 class="stat-number" data-target="8">0</h3>
               <span class="stat-plus">+</span>
-              <p class="stat-title">Projects Built</p>
+              <p class="stat-title">Real Projects</p>
             </div>
             <div class="stat-card tilt-card">
-              <h3 class="stat-number" data-target="3">0</h3>
+              <h3 class="stat-number" data-target="15">0</h3>
               <span class="stat-plus">+</span>
-              <p class="stat-title">Years Experience</p>
+              <p class="stat-title">Tech Skills</p>
             </div>
             <div class="stat-card tilt-card">
               <h3 class="stat-number" data-target="100">0</h3>
               <span class="stat-plus">%</span>
-              <p class="stat-title">Client Satisfaction</p>
+              <p class="stat-title">Dedication</p>
             </div>
           </div>
         </div>
@@ -119,20 +165,20 @@
             <div class="card-glass-layer"></div>
             <!-- Canvas container for interactive 3D shape -->
             <div id="hero-3d-object"></div>
-            
+
             <div class="badge-3d badge-top">
-              <i class="fab fa-react"></i>
+              <i class="fas fa-brain"></i>
               <div>
-                <strong>3D Web App</strong>
-                <span>Three.js & WebGL</span>
+                <strong>AI &amp; Automation</strong>
+                <span>AI Agents &amp; n8n Workflows</span>
               </div>
             </div>
 
             <div class="badge-3d badge-bottom">
-              <i class="fas fa-bolt"></i>
+              <i class="fab fa-flutter"></i>
               <div>
-                <strong>High Performance</strong>
-                <span>60 FPS Smooth</span>
+                <strong>Flutter &amp; Web</strong>
+                <span>Cross-Platform Apps</span>
               </div>
             </div>
           </div>
@@ -147,143 +193,154 @@
       </a>
     </section>
 
-    <!-- ============ ABOUT SECTION ============ -->
+    <!-- ============ ABOUT ME SECTION ============ -->
     <section class="about section" id="about">
       <div class="container">
         <div class="section-title-wrap text-center">
-          <span class="sub-title"><i class="fas fa-user-sparkles"></i> Who I Am</span>
-          <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+          <span class="sub-title"><i class="fas fa-user-astronaut"></i> Short Introduction</span>
+          <h2 class="section-title">About <span class="gradient-text">Sunil Kumar</span></h2>
           <div class="section-line"></div>
         </div>
 
         <div class="about-grid grid">
-          <!-- 3D Perspective Card Avatar -->
+          <!-- 3D Avatar Symbol -->
           <div class="about-img-box tilt-card-3d">
             <div class="about-card-inner">
               <div class="about-avatar-symbol">
-                <span>S</span>
+                <span>SK</span>
               </div>
               <div class="about-badge-3d">
-                <i class="fas fa-certificate"></i> Full-Stack &amp; 3D Specialist
+                <i class="fas fa-microchip"></i> CS Engineering Student &amp; AI Builder
               </div>
             </div>
           </div>
 
           <div class="about-content">
             <h3 class="about-heading">
-              Passionate Web Engineer Building the <span class="gradient-text">Future of Web</span>
+              Building Intelligent Software Products That <span class="gradient-text">Solve Real Problems</span>
             </h3>
             <p class="about-text">
-              Hello! I'm <strong>Sunil</strong>, a creative technologist focused on crafting immersive web experiences, responsive mobile applications, and interactive 3D frontends. I blend aesthetic visual design with solid engineering.
+              Hi, I'm <strong>Sunil Kumar</strong>, a Computer Science Engineering student with a strong passion for
+              building innovative software products. I specialize in AI-powered applications, Flutter development,
+              full-stack web development, IoT systems, automation workflows, and digital solutions.
             </p>
             <p class="about-text">
-              Specialized in modern JavaScript/TypeScript, WebGL graphics, and cloud-backed architectures. Every line of code is structured for optimal performance and cross-device responsiveness.
+              My journey into technology started with curiosity and has evolved into a passion for building intelligent
+              software solutions. I believe that technology should simplify people's lives, and every project I build
+              reflects that philosophy.
             </p>
 
             <div class="about-details grid">
               <div class="detail-item tilt-card">
-                <i class="fas fa-map-marker-alt detail-icon"></i>
-                <div>
-                  <span class="detail-label">Location</span>
-                  <h4 class="detail-val">India</h4>
-                </div>
-              </div>
-              <div class="detail-item tilt-card">
                 <i class="fas fa-envelope detail-icon"></i>
                 <div>
                   <span class="detail-label">Email</span>
-                  <h4 class="detail-val">sunil@example.com</h4>
+                  <a href="mailto:sunilkumar8433256@gmail.com" class="detail-val-link">sunilkumar8433256@gmail.com</a>
                 </div>
               </div>
               <div class="detail-item tilt-card">
-                <i class="fas fa-mobile-alt detail-icon"></i>
+                <i class="fas fa-phone-alt detail-icon"></i>
                 <div>
-                  <span class="detail-label">Mobile Friendly</span>
-                  <h4 class="detail-val">100% Adaptive</h4>
+                  <span class="detail-label">Phone</span>
+                  <a href="tel:+919508008724" class="detail-val-link">+91 9508008724</a>
                 </div>
               </div>
               <div class="detail-item tilt-card">
-                <i class="fas fa-check-circle detail-icon"></i>
+                <i class="fas fa-map-marker-alt detail-icon"></i>
                 <div>
-                  <span class="detail-label">Status</span>
-                  <h4 class="detail-val">Ready for Work</h4>
+                  <span class="detail-label">College</span>
+                  <h4 class="detail-val">SPNREC, Araria</h4>
+                </div>
+              </div>
+              <div class="detail-item tilt-card">
+                <i class="fas fa-bullseye detail-icon"></i>
+                <div>
+                  <span class="detail-label">Goal</span>
+                  <h4 class="detail-val">World-Class AI Engineer</h4>
                 </div>
               </div>
             </div>
 
-            <div class="about-actions">
-              <a href="#contact" class="btn btn-primary tilt-card">
-                <span>Hire Me Now</span> <i class="fas fa-paper-plane"></i>
-              </a>
-              <button class="btn btn-glass tilt-card" id="downloadCVBtn">
-                <span>Get CV</span> <i class="fas fa-download"></i>
-              </button>
+            <!-- Soft Skills Chips -->
+            <div class="soft-skills-wrap">
+              <span class="soft-title"><i class="fas fa-heart"></i> Soft Skills &amp; Strengths:</span>
+              <div class="soft-chips">
+                <span>Leadership</span>
+                <span>Communication</span>
+                <span>Critical Thinking</span>
+                <span>Problem Solving</span>
+                <span>Quick Learning</span>
+                <span>Creativity</span>
+                <span>Teamwork</span>
+                <span>Adaptability</span>
+                <span>Time Management</span>
+              </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Mission & Vision Cards -->
+        <div class="mission-vision-grid grid">
+          <div class="mv-card tilt-card-3d">
+            <div class="mv-icon-box"><i class="fas fa-rocket"></i></div>
+            <h3>My Mission</h3>
+            <p>To build innovative AI-powered products that improve education, productivity, healthcare, and everyday
+              life while creating meaningful digital experiences for users around the world.</p>
+          </div>
+          <div class="mv-card tilt-card-3d">
+            <div class="mv-icon-box"><i class="fas fa-eye"></i></div>
+            <h3>My Vision</h3>
+            <p>To become a globally recognized AI Product Engineer and entrepreneur by developing intelligent software
+              solutions that positively impact millions of people.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ TIMELINE & EXPERIENCE ============ -->
-    <section class="experience section" id="experience">
+    <!-- ============ EDUCATION & QUALIFICATIONS ============ -->
+    <section class="education section" id="education">
       <div class="container">
         <div class="section-title-wrap text-center">
-          <span class="sub-title"><i class="fas fa-history"></i> Qualifications &amp; Career</span>
-          <h2 class="section-title">Experience &amp; <span class="gradient-text">Education</span></h2>
+          <span class="sub-title"><i class="fas fa-graduation-cap"></i> Academic Journey</span>
+          <h2 class="section-title">Education &amp; <span class="gradient-text">Qualifications</span></h2>
           <div class="section-line"></div>
         </div>
 
         <div class="timeline-wrapper grid">
-          <!-- Experience -->
-          <div class="timeline-column">
-            <h3 class="timeline-col-title"><i class="fas fa-briefcase"></i> Work History</h3>
+          <div class="timeline-column full-width">
             <div class="timeline">
 
               <div class="timeline-item tilt-card">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                  <span class="timeline-date">2024 - Present</span>
-                  <h4 class="timeline-title">Senior Full-Stack Developer</h4>
-                  <span class="timeline-subtitle">Tech Studio Inc.</span>
-                  <p class="timeline-desc">Leading frontend architecture, 3D WebGL implementations, and micro-frontend integrations with 99.9% uptime.</p>
+                  <span class="timeline-date"><i class="fas fa-clock"></i> Currently Pursuing</span>
+                  <h4 class="timeline-title">Bachelor of Technology (B.Tech) — Computer Science Engineering</h4>
+                  <span class="timeline-subtitle"><i class="fas fa-university"></i> SPNREC, Araria</span>
+                  <p class="timeline-desc">Specializing in Artificial Intelligence, Full-Stack Web Development, Data
+                    Structures, Mobile App Engineering, and IoT Systems.</p>
                 </div>
               </div>
 
               <div class="timeline-item tilt-card">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                  <span class="timeline-date">2022 - 2024</span>
-                  <h4 class="timeline-title">Web Application Engineer</h4>
-                  <span class="timeline-subtitle">Digital Creative Lab</span>
-                  <p class="timeline-desc">Developed high-performance web products, interactive dashboards, and responsive web platforms for multi-device scalability.</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Education -->
-          <div class="timeline-column">
-            <h3 class="timeline-col-title"><i class="fas fa-graduation-cap"></i> Education</h3>
-            <div class="timeline">
-
-              <div class="timeline-item tilt-card">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                  <span class="timeline-date">2020 - 2024</span>
-                  <h4 class="timeline-title">Bachelor of Technology (Computer Science)</h4>
-                  <span class="timeline-subtitle">Apex Institute of Technology</span>
-                  <p class="timeline-desc">Focused on Data Structures, Web Engineering, Graphics Programming, and Software Architecture.</p>
+                  <span class="timeline-date"><i class="fas fa-check-circle"></i> Completed</span>
+                  <h4 class="timeline-title">Diploma in Engineering</h4>
+                  <span class="timeline-subtitle"><i class="fas fa-university"></i> New Government Polytechnic,
+                    Patna-13, Bihar</span>
+                  <p class="timeline-desc">Acquired strong foundational knowledge in Computer Hardware, Electronics,
+                    Programming, and System Fundamentals.</p>
                 </div>
               </div>
 
               <div class="timeline-item tilt-card">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                  <span class="timeline-date">2022</span>
-                  <h4 class="timeline-title">Full-Stack &amp; 3D Graphics Certification</h4>
-                  <span class="timeline-subtitle">Advanced Web Academy</span>
-                  <p class="timeline-desc">Specialized training in modern JavaScript, React, WebGL Three.js, and cloud application deployments.</p>
+                  <span class="timeline-date"><i class="fas fa-check-circle"></i> Completed</span>
+                  <h4 class="timeline-title">Secondary Education (Class 10)</h4>
+                  <span class="timeline-subtitle"><i class="fas fa-school"></i> Janta High School, Parsauni Chowk</span>
+                  <p class="timeline-desc">Completed secondary education with distinction in Mathematics and Science.
+                  </p>
                 </div>
               </div>
 
@@ -293,285 +350,645 @@
       </div>
     </section>
 
-    <!-- ============ SKILLS SECTION ============ -->
+    <!-- ============ TECHNICAL SKILLS ============ -->
     <section class="skills section" id="skills">
       <div class="container">
         <div class="section-title-wrap text-center">
-          <span class="sub-title"><i class="fas fa-cogs"></i> Technical Proficiency</span>
-          <h2 class="section-title">My <span class="gradient-text">Skills &amp; Tech Stack</span></h2>
+          <span class="sub-title"><i class="fas fa-cogs"></i> Professional Capabilities</span>
+          <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
           <div class="section-line"></div>
         </div>
 
+        <!-- Filter Controls (Includes ALL SKILLS) -->
         <div class="skills-filter-nav">
-          <button class="skill-tab-btn active" data-target="frontend">Frontend &amp; 3D</button>
-          <button class="skill-tab-btn" data-target="backend">Backend &amp; Cloud</button>
-          <button class="skill-tab-btn" data-target="tools">Tools &amp; DevOps</button>
+          <button class="skill-tab-btn active" data-target="all-skills">All Skills</button>
+          <button class="skill-tab-btn" data-target="cat-ai">AI &amp; Automation</button>
+          <button class="skill-tab-btn" data-target="cat-web">Web &amp; Mobile</button>
+          <button class="skill-tab-btn" data-target="cat-iot">IoT &amp; Cloud</button>
+          <button class="skill-tab-btn" data-target="cat-digital">Digital &amp; Tools</button>
         </div>
 
-        <div class="skills-grid-container">
-          <!-- Frontend Tab -->
-          <div class="skills-group active" id="frontend">
-            <div class="skills-grid grid">
-              
-              <div class="skill-card-3d tilt-card-3d">
-                <div class="skill-head">
-                  <i class="fab fa-js-square skill-icon js-color"></i>
-                  <div>
-                    <h4>JavaScript (ES6+)</h4>
-                    <span>Advanced</span>
-                  </div>
-                  <span class="pct-badge">92%</span>
-                </div>
-                <div class="progress-bar"><div class="progress-fill" style="--w: 92%;"></div></div>
-              </div>
+        <div class="skills-grid-wrapper grid" id="skillsGrid">
 
-              <div class="skill-card-3d tilt-card-3d">
-                <div class="skill-head">
-                  <i class="fab fa-react skill-icon react-color"></i>
-                  <div>
-                    <h4>React / Next.js</h4>
-                    <span>Expert</span>
-                  </div>
-                  <span class="pct-badge">90%</span>
-                </div>
-                <div class="progress-bar"><div class="progress-fill" style="--w: 90%;"></div></div>
-              </div>
-
-              <div class="skill-card-3d tilt-card-3d">
-                <div class="skill-head">
-                  <i class="fas fa-cube skill-icon three-color"></i>
-                  <div>
-                    <h4>Three.js / WebGL</h4>
-                    <span>3D Interactive</span>
-                  </div>
-                  <span class="pct-badge">85%</span>
-                </div>
-                <div class="progress-bar"><div class="progress-fill" style="--w: 85%;"></div></div>
-              </div>
-
-              <div class="skill-card-3d tilt-card-3d">
-                <div class="skill-head">
-                  <i class="fab fa-html5 skill-icon html-color"></i>
-                  <div>
-                    <h4>HTML5 &amp; CSS3</h4>
-                    <span>Semantic &amp; Modern</span>
-                  </div>
-                  <span class="pct-badge">95%</span>
-                </div>
-                <div class="progress-bar"><div class="progress-fill" style="--w: 95%;"></div></div>
-              </div>
-
+          <!-- 1. Artificial Intelligence -->
+          <div class="skill-box-card tilt-card-3d" data-category="cat-ai">
+            <div class="skill-box-header">
+              <i class="fas fa-robot skill-box-icon ai-icon"></i>
+              <h3>Artificial Intelligence</h3>
+            </div>
+            <div class="skill-box-divider"></div>
+            <ul class="skill-box-list">
+              <li><i class="fas fa-check"></i> AI Agents</li>
+              <li><i class="fas fa-check"></i> Prompt Engineering</li>
+              <li><i class="fas fa-check"></i> Generative AI</li>
+              <li><i class="fas fa-check"></i> OpenAI APIs</li>
+              <li><i class="fas fa-check"></i> LLM Integration</li>
+              <li><i class="fas fa-check"></i> AI Automation</li>
+              <li><i class="fas fa-check"></i> n8n Workflows</li>
+            </ul>
+            <div class="skill-box-footer">
+              <span>Projects Built:</span> <strong>5+</strong>
             </div>
           </div>
 
-          <!-- Backend Tab -->
-          <div class="skills-group" id="backend">
-            <div class="skills-grid grid">
-              
-              <div class="skill-card-3d tilt-card-3d">
-                <div class="skill-head">
-                  <i class="fab fa-node-js skill-icon node-color"></i>
-                  <div>
-                    <h4>Node.js &amp; Express</h4>
-                    <span>REST APIs</span>
-                  </div>
-                  <span class="pct-badge">88%</span>
-                </div>
-                <div class="progress-bar"><div class="progress-fill" style="--w: 88%;"></div></div>
-              </div>
-
-              <div class="skill-card-3d tilt-card-3d">
-                <div class="skill-head">
-                  <i class="fab fa-python skill-icon python-color"></i>
-                  <div>
-                    <h4>Python &amp; FastAPI</h4>
-                    <span>Backend &amp; AI</span>
-                  </div>
-                  <span class="pct-badge">82%</span>
-                </div>
-                <div class="progress-bar"><div class="progress-fill" style="--w: 82%;"></div></div>
-              </div>
-
-              <div class="skill-card-3d tilt-card-3d">
-                <div class="skill-head">
-                  <i class="fas fa-database skill-icon db-color"></i>
-                  <div>
-                    <h4>PostgreSQL / MongoDB</h4>
-                    <span>Database Architecture</span>
-                  </div>
-                  <span class="pct-badge">84%</span>
-                </div>
-                <div class="progress-bar"><div class="progress-fill" style="--w: 84%;"></div></div>
-              </div>
-
+          <!-- 2. Frontend Engineering -->
+          <div class="skill-box-card tilt-card-3d" data-category="cat-web">
+            <div class="skill-box-header">
+              <i class="fab fa-react skill-box-icon react-icon"></i>
+              <h3>Frontend Engineering</h3>
+            </div>
+            <div class="skill-box-divider"></div>
+            <ul class="skill-box-list">
+              <li><i class="fas fa-check"></i> HTML5 &amp; CSS3</li>
+              <li><i class="fas fa-check"></i> JavaScript (ES6+)</li>
+              <li><i class="fas fa-check"></i> React.js</li>
+              <li><i class="fas fa-check"></i> Next.js</li>
+              <li><i class="fas fa-check"></i> Tailwind CSS</li>
+              <li><i class="fas fa-check"></i> Bootstrap</li>
+              <li><i class="fas fa-check"></i> Responsive Web Design</li>
+            </ul>
+            <div class="skill-box-footer">
+              <span>Projects Built:</span> <strong>12+</strong>
             </div>
           </div>
 
-          <!-- Tools Tab -->
-          <div class="skills-group" id="tools">
-            <div class="skills-grid grid">
-              
-              <div class="skill-card-3d tilt-card-3d">
-                <div class="skill-head">
-                  <i class="fab fa-git-alt skill-icon git-color"></i>
-                  <div>
-                    <h4>Git &amp; GitHub</h4>
-                    <span>Version Control</span>
-                  </div>
-                  <span class="pct-badge">90%</span>
-                </div>
-                <div class="progress-bar"><div class="progress-fill" style="--w: 90%;"></div></div>
-              </div>
-
-              <div class="skill-card-3d tilt-card-3d">
-                <div class="skill-head">
-                  <i class="fab fa-figma skill-icon figma-color"></i>
-                  <div>
-                    <h4>Figma &amp; UI/UX</h4>
-                    <span>3D Mockups &amp; Prototyping</span>
-                  </div>
-                  <span class="pct-badge">86%</span>
-                </div>
-                <div class="progress-bar"><div class="progress-fill" style="--w: 86%;"></div></div>
-              </div>
-
-              <div class="skill-card-3d tilt-card-3d">
-                <div class="skill-head">
-                  <i class="fab fa-docker skill-icon docker-color"></i>
-                  <div>
-                    <h4>Docker &amp; Vercel</h4>
-                    <span>CI/CD &amp; Deployment</span>
-                  </div>
-                  <span class="pct-badge">78%</span>
-                </div>
-                <div class="progress-bar"><div class="progress-fill" style="--w: 78%;"></div></div>
-              </div>
-
+          <!-- 3. Backend Development -->
+          <div class="skill-box-card tilt-card-3d" data-category="cat-web">
+            <div class="skill-box-header">
+              <i class="fab fa-node-js skill-box-icon node-icon"></i>
+              <h3>Backend Development</h3>
+            </div>
+            <div class="skill-box-divider"></div>
+            <ul class="skill-box-list">
+              <li><i class="fas fa-check"></i> Node.js</li>
+              <li><i class="fas fa-check"></i> Express.js</li>
+              <li><i class="fas fa-check"></i> Firebase</li>
+              <li><i class="fas fa-check"></i> REST APIs</li>
+              <li><i class="fas fa-check"></i> Authentication</li>
+              <li><i class="fas fa-check"></i> Database Integration</li>
+              <li><i class="fas fa-check"></i> Cloud Functions</li>
+            </ul>
+            <div class="skill-box-footer">
+              <span>Projects Built:</span> <strong>8+</strong>
             </div>
           </div>
+
+          <!-- 4. Automation & AI Workflows -->
+          <div class="skill-box-card tilt-card-3d" data-category="cat-ai">
+            <div class="skill-box-header">
+              <i class="fas fa-diagram-project skill-box-icon n8n-icon"></i>
+              <h3>Automation &amp; AI Workflows</h3>
+            </div>
+            <div class="skill-box-divider"></div>
+            <ul class="skill-box-list">
+              <li><i class="fas fa-check"></i> n8n</li>
+              <li><i class="fas fa-check"></i> Workflow Automation</li>
+              <li><i class="fas fa-check"></i> AI Agents</li>
+              <li><i class="fas fa-check"></i> API Integration</li>
+              <li><i class="fas fa-check"></i> Business Automation</li>
+            </ul>
+            <div class="skill-box-footer">
+              <span>Automations:</span> <strong>10+</strong>
+            </div>
+          </div>
+
+          <!-- 5. Mobile Development -->
+          <div class="skill-box-card tilt-card-3d" data-category="cat-web">
+            <div class="skill-box-header">
+              <i class="fab fa-flutter skill-box-icon flutter-icon"></i>
+              <h3>Mobile Development</h3>
+            </div>
+            <div class="skill-box-divider"></div>
+            <ul class="skill-box-list">
+              <li><i class="fas fa-check"></i> Flutter</li>
+              <li><i class="fas fa-check"></i> React Native</li>
+              <li><i class="fas fa-check"></i> Dart</li>
+              <li><i class="fas fa-check"></i> Firebase Integration</li>
+              <li><i class="fas fa-check"></i> Android Development</li>
+              <li><i class="fas fa-check"></i> Material Design UI</li>
+            </ul>
+            <div class="skill-box-footer">
+              <span>Apps Developed:</span> <strong>3+</strong>
+            </div>
+          </div>
+
+          <!-- 6. Internet of Things (IoT) -->
+          <div class="skill-box-card tilt-card-3d" data-category="cat-iot">
+            <div class="skill-box-header">
+              <i class="fas fa-microchip skill-box-icon iot-icon"></i>
+              <h3>Internet of Things (IoT)</h3>
+            </div>
+            <div class="skill-box-divider"></div>
+            <ul class="skill-box-list">
+              <li><i class="fas fa-check"></i> ESP8266 Microcontrollers</li>
+              <li><i class="fas fa-check"></i> Blynk IoT Platform</li>
+              <li><i class="fas fa-check"></i> Relay Modules</li>
+              <li><i class="fas fa-check"></i> Sensor Integration</li>
+              <li><i class="fas fa-check"></i> Home Automation</li>
+              <li><i class="fas fa-check"></i> Gas Detection Systems</li>
+              <li><i class="fas fa-check"></i> Smart Agriculture</li>
+            </ul>
+            <div class="skill-box-footer">
+              <span>IoT Projects:</span> <strong>6+</strong>
+            </div>
+          </div>
+
+          <!-- 7. Digital Marketing -->
+          <div class="skill-box-card tilt-card-3d" data-category="cat-digital">
+            <div class="skill-box-header">
+              <i class="fas fa-chart-line skill-box-icon seo-icon"></i>
+              <h3>Digital Marketing</h3>
+            </div>
+            <div class="skill-box-divider"></div>
+            <ul class="skill-box-list">
+              <li><i class="fas fa-check"></i> Search Engine Optimization (SEO)</li>
+              <li><i class="fas fa-check"></i> On-Page &amp; Off-Page SEO</li>
+              <li><i class="fas fa-check"></i> Keyword Research</li>
+              <li><i class="fas fa-check"></i> Google Business Profile</li>
+              <li><i class="fas fa-check"></i> Social Media Marketing</li>
+              <li><i class="fas fa-check"></i> Content Strategy &amp; Analytics</li>
+            </ul>
+            <div class="skill-box-footer">
+              <span>Optimized:</span> <strong>Coaching, Clinic, News Portals</strong>
+            </div>
+          </div>
+
+          <!-- 8. Video Editing & Content Creation -->
+          <div class="skill-box-card tilt-card-3d" data-category="cat-digital">
+            <div class="skill-box-header">
+              <i class="fas fa-video skill-box-icon video-icon"></i>
+              <h3>Video Editing &amp; Content</h3>
+            </div>
+            <div class="skill-box-divider"></div>
+            <ul class="skill-box-list">
+              <li><i class="fas fa-check"></i> Video Editing</li>
+              <li><i class="fas fa-check"></i> Motion Graphics</li>
+              <li><i class="fas fa-check"></i> YouTube &amp; Reels Production</li>
+              <li><i class="fas fa-check"></i> Short-form Video Editing</li>
+              <li><i class="fas fa-check"></i> Thumbnail Design (Canva)</li>
+              <li><i class="fas fa-check"></i> Visual Storytelling</li>
+            </ul>
+            <div class="skill-box-footer">
+              <span>Content Projects:</span> <strong>Edu &amp; Brand Content</strong>
+            </div>
+          </div>
+
+          <!-- 9. Database & Cloud -->
+          <div class="skill-box-card tilt-card-3d" data-category="cat-iot">
+            <div class="skill-box-header">
+              <i class="fas fa-database skill-box-icon db-icon"></i>
+              <h3>Database &amp; Cloud</h3>
+            </div>
+            <div class="skill-box-divider"></div>
+            <ul class="skill-box-list">
+              <li><i class="fas fa-check"></i> Firebase Firestore</li>
+              <li><i class="fas fa-check"></i> Firebase Auth &amp; Storage</li>
+              <li><i class="fas fa-check"></i> MongoDB</li>
+              <li><i class="fas fa-check"></i> MySQL</li>
+              <li><i class="fas fa-check"></i> REST APIs &amp; Cloud Sync</li>
+            </ul>
+            <div class="skill-box-footer">
+              <span>Applied In:</span> <strong>Xvrino, Edu, Coaching Apps</strong>
+            </div>
+          </div>
+
+          <!-- 10. API Integration -->
+          <div class="skill-box-card tilt-card-3d" data-category="cat-web">
+            <div class="skill-box-header">
+              <i class="fas fa-plug skill-box-icon api-icon"></i>
+              <h3>API Integration</h3>
+            </div>
+            <div class="skill-box-divider"></div>
+            <ul class="skill-box-list">
+              <li><i class="fas fa-check"></i> REST &amp; JSON APIs</li>
+              <li><i class="fas fa-check"></i> Authentication APIs</li>
+              <li><i class="fas fa-check"></i> News APIs</li>
+              <li><i class="fas fa-check"></i> Firebase APIs</li>
+              <li><i class="fas fa-check"></i> OpenAI APIs</li>
+              <li><i class="fas fa-check"></i> Third-party Web Services</li>
+            </ul>
+            <div class="skill-box-footer">
+              <span>Applied In:</span> <strong>News Portal, Xvrino, AI Workflows</strong>
+            </div>
+          </div>
+
+          <!-- 11. Version Control & Tools -->
+          <div class="skill-box-card tilt-card-3d" data-category="cat-digital">
+            <div class="skill-box-header">
+              <i class="fab fa-git-alt skill-box-icon git-icon"></i>
+              <h3>Version Control &amp; Tools</h3>
+            </div>
+            <div class="skill-box-divider"></div>
+            <ul class="skill-box-list">
+              <li><i class="fas fa-check"></i> Git &amp; GitHub</li>
+              <li><i class="fas fa-check"></i> VS Code</li>
+              <li><i class="fas fa-check"></i> Android Studio</li>
+              <li><i class="fas fa-check"></i> Postman API Testing</li>
+              <li><i class="fas fa-check"></i> Vercel, Netlify, Railway</li>
+            </ul>
+            <div class="skill-box-footer">
+              <span>Used In:</span> <strong>All Development Projects</strong>
+            </div>
+          </div>
+
+          <!-- 12. Problem Solving & Engineering -->
+          <div class="skill-box-card tilt-card-3d" data-category="cat-ai">
+            <div class="skill-box-header">
+              <i class="fas fa-cogs skill-box-icon eng-icon"></i>
+              <h3>Problem Solving &amp; Engineering</h3>
+            </div>
+            <div class="skill-box-divider"></div>
+            <ul class="skill-box-list">
+              <li><i class="fas fa-check"></i> Software Architecture</li>
+              <li><i class="fas fa-check"></i> Debugging &amp; Performance</li>
+              <li><i class="fas fa-check"></i> Responsive Development</li>
+              <li><i class="fas fa-check"></i> Cross-platform Engineering</li>
+              <li><i class="fas fa-check"></i> Clean Code &amp; Scalable Systems</li>
+            </ul>
+            <div class="skill-box-footer">
+              <span>Applied In:</span> <strong>All Web, Mobile &amp; IoT Apps</strong>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ============ PROJECTS SECTION ============ -->
+    <!-- ============ PROJECTS SHOWCASE ============ -->
     <section class="projects section" id="projects">
       <div class="container">
         <div class="section-title-wrap text-center">
           <span class="sub-title"><i class="fas fa-folder-open"></i> Portfolio Showcase</span>
-          <h2 class="section-title">Featured <span class="gradient-text">3D &amp; Web Projects</span></h2>
+          <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
           <div class="section-line"></div>
         </div>
 
         <!-- Filter Controls -->
         <div class="portfolio-filter-buttons">
           <button class="filter-btn active" data-filter="all">All Projects</button>
-          <button class="filter-btn" data-filter="web3d">3D &amp; Interactive</button>
-          <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
-          <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+          <button class="filter-btn" data-filter="ai-app">AI &amp; Mobile</button>
+          <button class="filter-btn" data-filter="web-platform">Web Applications</button>
+          <button class="filter-btn" data-filter="iot-sys">IoT &amp; Automation</button>
         </div>
 
         <div class="projects-container grid" id="projectsGrid">
-          
-          <!-- Card 1 -->
-          <article class="project-card-3d tilt-card-3d" data-category="web3d">
+
+          <!-- Project 1: Xvrino -->
+          <article class="project-card-3d tilt-card-3d" data-category="ai-app">
             <div class="project-media gradient-bg-1">
               <div class="project-3d-visual">
-                <i class="fas fa-cube project-icon-3d"></i>
+                <i class="fas fa-comments project-icon-3d"></i>
               </div>
-              <span class="project-category-badge">3D &amp; WebGL</span>
+              <span class="project-category-badge">AI &amp; Flutter</span>
             </div>
             <div class="project-details">
               <div class="project-tech-tags">
-                <span>Three.js</span><span>React</span><span>GSAP</span>
+                <span>Flutter</span><span>Firebase</span><span>OpenAI API</span><span>Dart</span>
               </div>
-              <h3 class="project-title">CyberSphere 3D Metaverse</h3>
+              <h3 class="project-title">Xvrino – AI English Speaking App</h3>
               <p class="project-description">
-                Interactive 3D virtual environment with real-time particle rendering, 3D object controls, and WebGL shader animations.
+                Interactive AI-powered English speaking practice app featuring real-time lesson feedback, course
+                management, learning dashboards, and progress tracking.
               </p>
               <div class="project-actions">
-                <button class="btn-project-link open-modal-btn" data-modal="modal-1">
+                <button class="btn-project-link open-modal-btn" data-modal="proj-xvrino">
                   <span>View Details</span> <i class="fas fa-eye"></i>
                 </button>
-                <a href="#" class="btn-project-icon" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#contact" class="btn-project-icon" title="Inquire"><i class="fas fa-paper-plane"></i></a>
               </div>
             </div>
           </article>
 
-          <!-- Card 2 -->
-          <article class="project-card-3d tilt-card-3d" data-category="fullstack">
+          <!-- Project 2: Coaching Website -->
+          <article class="project-card-3d tilt-card-3d" data-category="web-platform">
             <div class="project-media gradient-bg-2">
               <div class="project-3d-visual">
-                <i class="fas fa-shopping-bag project-icon-3d"></i>
+                <i class="fas fa-chalkboard-teacher project-icon-3d"></i>
               </div>
-              <span class="project-category-badge">Full-Stack</span>
+              <span class="project-category-badge">Web Platform</span>
             </div>
             <div class="project-details">
               <div class="project-tech-tags">
-                <span>Next.js</span><span>Node.js</span><span>Stripe</span>
+                <span>Full Stack</span><span>Node.js</span><span>Admin Dashboard</span><span>SEO</span>
               </div>
-              <h3 class="project-title">Aether Pro E-Commerce</h3>
+              <h3 class="project-title">Coaching Institute Management</h3>
               <p class="project-description">
-                High-converting 3D product visualizer online shop featuring instant cart, dark/light themes, and automated payments.
+                Complete educational management system featuring student registration, course management, online
+                admissions, study materials, and admin dashboard.
               </p>
               <div class="project-actions">
-                <button class="btn-project-link open-modal-btn" data-modal="modal-2">
+                <button class="btn-project-link open-modal-btn" data-modal="proj-coaching">
                   <span>View Details</span> <i class="fas fa-eye"></i>
                 </button>
-                <a href="#" class="btn-project-icon" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#contact" class="btn-project-icon" title="Inquire"><i class="fas fa-paper-plane"></i></a>
               </div>
             </div>
           </article>
 
-          <!-- Card 3 -->
-          <article class="project-card-3d tilt-card-3d" data-category="web3d">
+          <!-- Project 3: Clinic Management -->
+          <article class="project-card-3d tilt-card-3d" data-category="web-platform">
             <div class="project-media gradient-bg-3">
               <div class="project-3d-visual">
-                <i class="fas fa-robot project-icon-3d"></i>
+                <i class="fas fa-notes-medical project-icon-3d"></i>
               </div>
-              <span class="project-category-badge">AI &amp; 3D</span>
+              <span class="project-category-badge">Healthcare Web</span>
             </div>
             <div class="project-details">
               <div class="project-tech-tags">
-                <span>Python</span><span>FastAPI</span><span>Three.js</span>
+                <span>HTML/CSS/JS</span><span>Bootstrap</span><span>SEO Friendly</span>
               </div>
-              <h3 class="project-title">Nexus AI Intelligence Suite</h3>
+              <h3 class="project-title">Clinic Management Website</h3>
               <p class="project-description">
-                AI analytics dashboard with dynamic 3D charts, real-time telemetry streaming, and automated voice prompt handlers.
+                Professional clinic web solution simplifying patient communication, doctor profile highlights,
+                appointment booking info, and medical services list.
               </p>
               <div class="project-actions">
-                <button class="btn-project-link open-modal-btn" data-modal="modal-3">
+                <button class="btn-project-link open-modal-btn" data-modal="proj-clinic">
                   <span>View Details</span> <i class="fas fa-eye"></i>
                 </button>
-                <a href="#" class="btn-project-icon" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#contact" class="btn-project-icon" title="Inquire"><i class="fas fa-paper-plane"></i></a>
               </div>
             </div>
           </article>
 
-          <!-- Card 4 -->
-          <article class="project-card-3d tilt-card-3d" data-category="mobile">
+          <!-- Project 4: News Portal -->
+          <article class="project-card-3d tilt-card-3d" data-category="web-platform">
             <div class="project-media gradient-bg-4">
               <div class="project-3d-visual">
-                <i class="fas fa-mobile-screen-button project-icon-3d"></i>
+                <i class="fas fa-newspaper project-icon-3d"></i>
               </div>
-              <span class="project-category-badge">Mobile App</span>
+              <span class="project-category-badge">API Integration</span>
             </div>
             <div class="project-details">
               <div class="project-tech-tags">
-                <span>React Native</span><span>Firebase</span>
+                <span>REST API</span><span>JavaScript</span><span>Category Filter</span>
               </div>
-              <h3 class="project-title">PulseFit Mobile Ecosystem</h3>
+              <h3 class="project-title">Live News Portal Website</h3>
               <p class="project-description">
-                Smooth 60FPS mobile app featuring step trackers, 3D body models for workout analysis, and live social leaderboards.
+                Fast, responsive news portal pulling real-time news updates via REST APIs with category filtering,
+                search functionality, and modern UI layout.
               </p>
               <div class="project-actions">
-                <button class="btn-project-link open-modal-btn" data-modal="modal-4">
+                <button class="btn-project-link open-modal-btn" data-modal="proj-news">
                   <span>View Details</span> <i class="fas fa-eye"></i>
                 </button>
-                <a href="#" class="btn-project-icon" title="Live Preview"><i class="fas fa-external-link-alt"></i></a>
+                <a href="#contact" class="btn-project-icon" title="Inquire"><i class="fas fa-paper-plane"></i></a>
               </div>
             </div>
           </article>
 
+          <!-- Project 5: Educational Materials App -->
+          <article class="project-card-3d tilt-card-3d" data-category="ai-app">
+            <div class="project-media gradient-bg-1">
+              <div class="project-3d-visual">
+                <i class="fas fa-book-reader project-icon-3d"></i>
+              </div>
+              <span class="project-category-badge">Education App</span>
+            </div>
+            <div class="project-details">
+              <div class="project-tech-tags">
+                <span>Flutter</span><span>PDF Materials</span><span>UI Design</span>
+              </div>
+              <h3 class="project-title">Educational Materials Application</h3>
+              <p class="project-description">
+                Unified learning app providing students with organized course notes, PDF study materials, and easy
+                navigation across subject categories.
+              </p>
+              <div class="project-actions">
+                <button class="btn-project-link open-modal-btn" data-modal="proj-edu">
+                  <span>View Details</span> <i class="fas fa-eye"></i>
+                </button>
+                <a href="#contact" class="btn-project-icon" title="Inquire"><i class="fas fa-paper-plane"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Home Automation -->
+          <article class="project-card-3d tilt-card-3d" data-category="iot-sys">
+            <div class="project-media gradient-bg-2">
+              <div class="project-3d-visual">
+                <i class="fas fa-home project-icon-3d"></i>
+              </div>
+              <span class="project-category-badge">IoT Hardware</span>
+            </div>
+            <div class="project-details">
+              <div class="project-tech-tags">
+                <span>ESP8266</span><span>Blynk IoT</span><span>Relay Modules</span>
+              </div>
+              <h3 class="project-title">Smart Home Automation System</h3>
+              <p class="project-description">
+                Wi-Fi based smart home automation system utilizing ESP8266 microcontrollers and Blynk IoT platform for
+                remote mobile device switching.
+              </p>
+              <div class="project-actions">
+                <button class="btn-project-link open-modal-btn" data-modal="proj-homeauto">
+                  <span>View Details</span> <i class="fas fa-eye"></i>
+                </button>
+                <a href="#contact" class="btn-project-icon" title="Inquire"><i class="fas fa-paper-plane"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7: Smart Agriculture -->
+          <article class="project-card-3d tilt-card-3d" data-category="iot-sys">
+            <div class="project-media gradient-bg-3">
+              <div class="project-3d-visual">
+                <i class="fas fa-seedling project-icon-3d"></i>
+              </div>
+              <span class="project-category-badge">IoT Agriculture</span>
+            </div>
+            <div class="project-details">
+              <div class="project-tech-tags">
+                <span>ESP8266</span><span>Sensors</span><span>Real-time Data</span>
+              </div>
+              <h3 class="project-title">Smart Agriculture Monitoring</h3>
+              <p class="project-description">
+                IoT-based agriculture solution leveraging ESP8266 and environmental sensors to stream real-time farming
+                soil &amp; weather metrics to a remote dashboard.
+              </p>
+              <div class="project-actions">
+                <button class="btn-project-link open-modal-btn" data-modal="proj-agri">
+                  <span>View Details</span> <i class="fas fa-eye"></i>
+                </button>
+                <a href="#contact" class="btn-project-icon" title="Inquire"><i class="fas fa-paper-plane"></i></a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8: Gas Detection -->
+          <article class="project-card-3d tilt-card-3d" data-category="iot-sys">
+            <div class="project-media gradient-bg-4">
+              <div class="project-3d-visual">
+                <i class="fas fa-gas-pump project-icon-3d"></i>
+              </div>
+              <span class="project-category-badge">IoT Safety</span>
+            </div>
+            <div class="project-details">
+              <div class="project-tech-tags">
+                <span>ESP8266</span><span>Gas Sensor</span><span>Alert System</span>
+              </div>
+              <h3 class="project-title">Smart Gas Detection System</h3>
+              <p class="project-description">
+                Safety-critical IoT system detecting gas leakage with instant sensor triggers and real-time alert
+                notifications to prevent accidents.
+              </p>
+              <div class="project-actions">
+                <button class="btn-project-link open-modal-btn" data-modal="proj-gas">
+                  <span>View Details</span> <i class="fas fa-eye"></i>
+                </button>
+                <a href="#contact" class="btn-project-icon" title="Inquire"><i class="fas fa-paper-plane"></i></a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS & REVIEWS ============ -->
+    <section class="testimonials section">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="sub-title"><i class="fas fa-quote-left"></i> Testimonials</span>
+          <h2 class="section-title">Client &amp; Academic <span class="gradient-text">Feedback</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="testimonials-grid grid">
+          <div class="testimonial-card tilt-card-3d">
+            <div class="testi-header">
+              <div class="testi-avatar"><i class="fas fa-user-tie"></i></div>
+              <div>
+                <h4>Institute Director</h4>
+                <span>Coaching Management Client</span>
+              </div>
+            </div>
+            <p class="testi-text">
+              "Sunil delivered an exceptional Coaching Institute website with admin features. His attention to SEO and
+              user experience exceeded our expectations!"
+            </p>
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <div class="testimonial-card tilt-card-3d">
+            <div class="testi-header">
+              <div class="testi-avatar"><i class="fas fa-user-md"></i></div>
+              <div>
+                <h4>Clinic Representative</h4>
+                <span>Healthcare Web Client</span>
+              </div>
+            </div>
+            <p class="testi-text">
+              "Our clinic website is super responsive and patients find booking appointment information effortlessly.
+              Sunil is a reliable full-stack developer."
+            </p>
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <div class="testimonial-card tilt-card-3d">
+            <div class="testi-header">
+              <div class="testi-avatar"><i class="fas fa-graduation-cap"></i></div>
+              <div>
+                <h4>Academic Mentor</h4>
+                <span>SPNREC Computer Science Dept</span>
+              </div>
+            </div>
+            <p class="testi-text">
+              "Sunil shows remarkable expertise in AI Agents, IoT systems, and Flutter development. He is a standout
+              engineer with strong problem-solving skills."
+            </p>
+            <div class="testi-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ACCORDION SECTION ============ -->
+    <section class="faq section" id="faq">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="sub-title"><i class="fas fa-question-circle"></i> Got Questions?</span>
+          <h2 class="section-title">Frequently Asked <span class="gradient-text">Questions</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="faq-container">
+          <div class="faq-item tilt-card">
+            <button class="faq-question">
+              <span>What core services does Sunil Kumar offer?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>I offer Full Stack Web Development (React, Next.js, Node.js), Flutter Mobile App Development, AI Agents
+                &amp; n8n Automation Workflows, IoT Hardware Systems (ESP8266, Blynk), and SEO Digital Marketing
+                services.</p>
+            </div>
+          </div>
+
+          <div class="faq-item tilt-card">
+            <button class="faq-question">
+              <span>Are you available for freelance projects, internships, or full-time roles?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! I am actively available for remote freelance projects, tech internships, full-time opportunities,
+                open source collaborations, and AI consulting.</p>
+            </div>
+          </div>
+
+          <div class="faq-item tilt-card">
+            <button class="faq-question">
+              <span>How do you handle AI automation &amp; n8n workflows?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>I connect OpenAI LLM APIs, webhooks, and third-party services using n8n to automate business
+                operations, lead capture, automated email notifications, and AI content workflows without manual
+                overhead.</p>
+            </div>
+          </div>
+
+          <div class="faq-item tilt-card">
+            <button class="faq-question">
+              <span>How can clients or recruiters get in touch with you?</span>
+              <i class="fas fa-chevron-down faq-icon"></i>
+            </button>
+            <div class="faq-answer">
+              <p>You can email me directly at <a
+                  href="mailto:sunilkumar8433256@gmail.com">sunilkumar8433256@gmail.com</a>, call/WhatsApp at
+                <strong>+91 9508008724</strong>, or submit the contact form below.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES & AVAILABLE FOR ============ -->
+    <section class="services section">
+      <div class="container">
+        <div class="section-title-wrap text-center">
+          <span class="sub-title"><i class="fas fa-handshake"></i> Opportunities</span>
+          <h2 class="section-title">Available <span class="gradient-text">For &amp; Collaborations</span></h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="avail-grid grid">
+          <div class="avail-card tilt-card"><i class="fas fa-laptop-code"></i> Freelance Projects</div>
+          <div class="avail-card tilt-card"><i class="fas fa-user-graduate"></i> Internships</div>
+          <div class="avail-card tilt-card"><i class="fas fa-briefcase"></i> Full-Time Opportunities</div>
+          <div class="avail-card tilt-card"><i class="fas fa-users"></i> Collaborations</div>
+          <div class="avail-card tilt-card"><i class="fab fa-github"></i> Open Source Contributions</div>
+          <div class="avail-card tilt-card"><i class="fas fa-lightbulb"></i> AI &amp; Tech Consulting</div>
         </div>
       </div>
     </section>
@@ -580,16 +997,17 @@
     <section class="contact section" id="contact">
       <div class="container">
         <div class="section-title-wrap text-center">
-          <span class="sub-title"><i class="fas fa-comments"></i> Start a Project</span>
+          <span class="sub-title"><i class="fas fa-comments"></i> Let's Work Together</span>
           <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
           <div class="section-line"></div>
         </div>
 
         <div class="contact-grid grid">
           <div class="contact-card-info tilt-card-3d">
-            <h3 class="contact-info-title">Let's discuss your next <span class="gradient-text">big idea</span></h3>
+            <h3 class="contact-info-title">Let's build something <span class="gradient-text">extraordinary</span></h3>
             <p class="contact-info-text">
-              Have a project in mind or looking for a full-stack &amp; 3D developer to join your team? Send a message and let's craft something exceptional together.
+              Have an AI project, web platform, mobile app, or IoT idea? Feel free to reach out via email or phone. I'm
+              always open to discussing new opportunities.
             </p>
 
             <div class="contact-methods">
@@ -597,7 +1015,7 @@
                 <div class="contact-icon-box"><i class="fas fa-envelope"></i></div>
                 <div>
                   <span class="contact-label">Email</span>
-                  <a href="mailto:sunil@example.com" class="contact-value">sunil@example.com</a>
+                  <a href="mailto:sunilkumar8433256@gmail.com" class="contact-value">sunilkumar8433256@gmail.com</a>
                 </div>
               </div>
 
@@ -605,7 +1023,7 @@
                 <div class="contact-icon-box"><i class="fas fa-phone-alt"></i></div>
                 <div>
                   <span class="contact-label">Phone</span>
-                  <a href="tel:+919876543210" class="contact-value">+91 98765 43210</a>
+                  <a href="tel:+919508008724" class="contact-value">+91 9508008724</a>
                 </div>
               </div>
 
@@ -613,16 +1031,18 @@
                 <div class="contact-icon-box"><i class="fas fa-map-marker-alt"></i></div>
                 <div>
                   <span class="contact-label">Location</span>
-                  <span class="contact-value">India 🇮🇳 (Available Worldwide)</span>
+                  <span class="contact-value">Bihar, India 🇮🇳 (Available Worldwide)</span>
                 </div>
               </div>
             </div>
 
             <div class="contact-socials">
+              <a href="mailto:sunilkumar8433256@gmail.com" class="social-btn tilt-card" aria-label="Email"><i
+                  class="fas fa-envelope"></i></a>
+              <a href="tel:+919508008724" class="social-btn tilt-card" aria-label="Phone"><i
+                  class="fas fa-phone"></i></a>
               <a href="#" class="social-btn tilt-card" aria-label="GitHub"><i class="fab fa-github"></i></a>
               <a href="#" class="social-btn tilt-card" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-              <a href="#" class="social-btn tilt-card" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-btn tilt-card" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
             </div>
           </div>
 
@@ -634,14 +1054,14 @@
                   <label for="name">Your Name</label>
                   <div class="input-wrap">
                     <i class="fas fa-user input-icon"></i>
-                    <input type="text" id="name" required placeholder="John Doe" />
+                    <input type="text" id="name" required placeholder="Sunil Kumar" />
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="email">Your Email</label>
                   <div class="input-wrap">
                     <i class="fas fa-envelope input-icon"></i>
-                    <input type="email" id="email" required placeholder="john@example.com" />
+                    <input type="email" id="email" required placeholder="sunil@example.com" />
                   </div>
                 </div>
               </div>
@@ -650,7 +1070,7 @@
                 <label for="subject">Subject</label>
                 <div class="input-wrap">
                   <i class="fas fa-tag input-icon"></i>
-                  <input type="text" id="subject" required placeholder="Project Inquiry / Hiring" />
+                  <input type="text" id="subject" required placeholder="Project Inquiry / Hiring / Collaboration" />
                 </div>
               </div>
 
@@ -658,7 +1078,8 @@
                 <label for="message">Message</label>
                 <div class="input-wrap">
                   <i class="fas fa-comment-alt input-icon icon-top"></i>
-                  <textarea id="message" rows="5" required placeholder="Tell me about your project specs or requirements..."></textarea>
+                  <textarea id="message" rows="5" required
+                    placeholder="Tell me about your project requirements or hiring offer..."></textarea>
                 </div>
               </div>
 
@@ -674,24 +1095,61 @@
     </section>
   </main>
 
+  <!-- ============ FLOATING AI CHATBOT ASSISTANT ============ -->
+  <div class="ai-chatbot-widget" id="aiChatbotWidget">
+    <button class="ai-chatbot-toggle" id="aiChatbotToggle" aria-label="Ask Sunil AI Assistant">
+      <i class="fas fa-robot"></i>
+      <span class="ai-badge-pulse">Ask AI</span>
+    </button>
+    <div class="ai-chatbot-window" id="aiChatbotWindow">
+      <div class="ai-chat-header">
+        <div class="ai-chat-title">
+          <i class="fas fa-robot"></i>
+          <div>
+            <strong>Ask Sunil AI</strong>
+            <span>Instant Assistant</span>
+          </div>
+        </div>
+        <button class="ai-chat-close" id="aiChatClose"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="ai-chat-messages" id="aiChatMessages">
+        <div class="chat-msg bot-msg">
+          <p>Hi! I'm <strong>Sunil AI</strong> 🤖. How can I help you today? Select a question or type below:</p>
+        </div>
+      </div>
+      <div class="ai-chat-chips">
+        <button class="chat-chip" data-q="skills">What are Sunil's main skills?</button>
+        <button class="chat-chip" data-q="projects">What projects has Sunil built?</button>
+        <button class="chat-chip" data-q="contact">How can I contact Sunil?</button>
+        <button class="chat-chip" data-q="hire">Is Sunil available for hire?</button>
+      </div>
+      <form class="ai-chat-input-form" id="aiChatForm">
+        <input type="text" id="aiChatInput" placeholder="Ask anything about Sunil..." required />
+        <button type="submit" aria-label="Send"><i class="fas fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
     <div class="container footer-container text-center">
       <a href="#home" class="footer-logo">
-        <span class="logo-box">S</span> SUNIL<span class="dot">.</span>DEV
+        <span class="logo-box">SK</span> SUNIL KUMAR
       </a>
-      <p class="footer-tagline">Building Next-Gen 3D &amp; Mobile Web Experiences</p>
+      <p class="footer-tagline">Building the Future with Artificial Intelligence, Automation, and Innovation.</p>
 
       <div class="footer-links">
         <a href="#home">Home</a>
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 Sunil. All rights reserved.</p>
+        <p>Designed &amp; Developed with ❤️ by <strong>Sunil Kumar</strong> &copy; 2026</p>
         <a href="#home" class="back-to-top" aria-label="Back to top">
           <i class="fas fa-arrow-up"></i>
         </a>
@@ -707,7 +1165,64 @@
     </div>
   </div>
 
+  <!-- Modal Template for Live Formatted Resume -->
+  <div class="modal-overlay" id="resumeModal">
+    <div class="modal-content tilt-card-3d resume-modal-content">
+      <button class="modal-close" id="resumeModalClose"><i class="fas fa-times"></i></button>
+      <div class="resume-viewer">
+        <div class="resume-header text-center">
+          <h2>Sunil Kumar</h2>
+          <p class="resume-subtitle">AI Engineer | Full Stack Developer | Flutter Developer | IoT Specialist</p>
+          <div class="resume-contact-bar">
+            <span><i class="fas fa-envelope"></i> sunilkumar8433256@gmail.com</span>
+            <span><i class="fas fa-phone"></i> +91 9508008724</span>
+            <span><i class="fas fa-map-marker-alt"></i> Bihar, India</span>
+          </div>
+        </div>
+        <div class="resume-body">
+          <div class="resume-sec">
+            <h3>Professional Summary</h3>
+            <p>Computer Science Engineering student with hands-on experience in Artificial Intelligence, Flutter
+              Development, Full Stack Web Development, IoT, AI Automation, SEO, Digital Marketing, and Responsive UI
+              Design. Experienced in developing real-world software applications, automation systems, educational
+              platforms, and intelligent IoT projects.</p>
+          </div>
+          <div class="resume-sec">
+            <h3>Education</h3>
+            <ul>
+              <li><strong>B.Tech in Computer Science Engineering</strong> — SPNREC, Araria (Currently Pursuing)</li>
+              <li><strong>Diploma in Engineering</strong> — New Government Polytechnic, Patna-13, Bihar (Completed)</li>
+              <li><strong>Class 10 (Secondary Education)</strong> — Janta High School, Parsauni Chowk (Completed)</li>
+            </ul>
+          </div>
+          <div class="resume-sec">
+            <h3>Core Technical Expertise</h3>
+            <p><strong>AI &amp; Automation:</strong> AI Agents, Prompt Engineering, Generative AI, OpenAI APIs, n8n
+              Workflows, LLM Integration</p>
+            <p><strong>Web &amp; Mobile:</strong> Flutter, React.js, Next.js, Node.js, Express.js, JavaScript, Python,
+              Dart, HTML5/CSS3, Tailwind</p>
+            <p><strong>IoT &amp; Cloud:</strong> ESP8266, Blynk IoT, Sensors, Firebase Firestore, MySQL, MongoDB</p>
+          </div>
+          <div class="resume-sec">
+            <h3>Featured Projects</h3>
+            <ul>
+              <li><strong>Xvrino – AI English Speaking App:</strong> Flutter + Firebase AI learning platform.</li>
+              <li><strong>Coaching Institute Management System:</strong> Full-stack educational management platform.
+              </li>
+              <li><strong>Smart Home Automation &amp; Gas Detection:</strong> ESP8266 + Blynk IoT systems.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="resume-actions text-center">
+          <button class="btn btn-primary" onclick="window.print()"><i class="fas fa-print"></i> Print Resume / Save
+            PDF</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Main JavaScript File -->
   <script src="main.js"></script>
 </body>
+
 </html>

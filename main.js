@@ -1,5 +1,5 @@
 /* ============================================================
-   SUNIL PORTFOLIO — CONSOLIDATED 3D JAVASCRIPT & MOBILE HANDLER
+   SUNIL KUMAR — CONSOLIDATED 3D JAVASCRIPT & MOBILE HANDLER
    ============================================================ */
 
 (function () {
@@ -26,7 +26,7 @@
     canvasContainer.appendChild(renderer.domElement);
 
     // 3D Particles
-    const particlesCount = window.innerWidth < 768 ? 250 : 600;
+    const particlesCount = window.innerWidth < 768 ? 250 : 650;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particlesCount * 3);
     const colors = new Float32Array(particlesCount * 3);
@@ -35,9 +35,9 @@
     const color2 = new THREE.Color('#3ecfcf');
 
     for (let i = 0; i < particlesCount * 3; i += 3) {
-      positions[i] = (Math.random() - 0.5) * 80;
-      positions[i + 1] = (Math.random() - 0.5) * 80;
-      positions[i + 2] = (Math.random() - 0.5) * 80;
+      positions[i] = (Math.random() - 0.5) * 85;
+      positions[i + 1] = (Math.random() - 0.5) * 85;
+      positions[i + 2] = (Math.random() - 0.5) * 85;
 
       const mixedColor = color1.clone().lerp(color2, Math.random());
       colors[i] = mixedColor.r;
@@ -115,7 +115,30 @@
   initThreeJS();
 
   /* ============================================
-     2. 3D CARD TILT EFFECT (DESKTOP + TOUCH MOBILE)
+     2. DYNAMIC THEME COLOR PICKER
+     ============================================ */
+  const themeToggleBtn = document.getElementById('themeToggleBtn');
+  const themeOptions = document.getElementById('themeOptions');
+  const themeOpts = document.querySelectorAll('.theme-opt');
+
+  if (themeToggleBtn && themeOptions) {
+    themeToggleBtn.addEventListener('click', () => {
+      themeOptions.classList.toggle('open');
+    });
+
+    themeOpts.forEach(opt => {
+      opt.addEventListener('click', () => {
+        themeOpts.forEach(o => o.classList.remove('active'));
+        opt.classList.add('active');
+        const hue = opt.getAttribute('data-hue');
+        document.documentElement.style.setProperty('--hue', hue);
+        themeOptions.classList.remove('open');
+      });
+    });
+  }
+
+  /* ============================================
+     3. 3D CARD TILT EFFECT (DESKTOP + TOUCH MOBILE)
      ============================================ */
   const tiltCards = document.querySelectorAll('.tilt-card, .tilt-card-3d');
 
@@ -148,7 +171,7 @@
   });
 
   /* ============================================
-     3. MOBILE NAVIGATION MENU TOGGLE
+     4. MOBILE NAVIGATION MENU TOGGLE
      ============================================ */
   const navMenu = document.getElementById('navMenu');
   const navToggle = document.getElementById('navToggle');
@@ -174,7 +197,7 @@
   });
 
   /* ============================================
-     4. HEADER SCROLL & ACTIVE LINK HIGHLIGHT
+     5. HEADER SCROLL & ACTIVE LINK HIGHLIGHT
      ============================================ */
   const header = document.getElementById('header');
 
@@ -205,14 +228,15 @@
   });
 
   /* ============================================
-     5. TYPEWRITER EFFECT
+     6. TYPEWRITER EFFECT
      ============================================ */
   const typewriterEl = document.getElementById('typewriter');
   const roles = [
-    'Full-Stack Developer 💻',
-    '3D Web Interactive Creator 🎨',
-    'React & Three.js Engineer ⚡',
-    'Mobile UI Specialist 📱',
+    'AI Engineer 🤖',
+    'Full Stack Developer 💻',
+    'Flutter App Developer 📱',
+    'IoT Systems Engineer 🔌',
+    'AI Automation Specialist ⚡',
   ];
   let roleIndex = 0;
   let charIndex = 0;
@@ -246,7 +270,7 @@
   setTimeout(typeRole, 600);
 
   /* ============================================
-     6. STATS COUNTER ANIMATION
+     7. STATS COUNTER ANIMATION
      ============================================ */
   const statNumbers = document.querySelectorAll('.stat-number');
   let animatedStats = false;
@@ -285,40 +309,32 @@
   }
 
   /* ============================================
-     7. SKILL TABS & PROGRESS ANIMATION
+     8. SKILL FILTERING (INCLUDES ALL SKILLS)
      ============================================ */
   const skillTabBtns = document.querySelectorAll('.skill-tab-btn');
-  const skillGroups = document.querySelectorAll('.skills-group');
+  const skillBoxCards = document.querySelectorAll('.skill-box-card');
 
   skillTabBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       skillTabBtns.forEach((b) => b.classList.remove('active'));
-      skillGroups.forEach((g) => g.classList.remove('active'));
-
       btn.classList.add('active');
-      const targetId = btn.getAttribute('data-target');
-      const targetGroup = document.getElementById(targetId);
-      if (targetGroup) {
-        targetGroup.classList.add('active');
-        animateSkillBars(targetGroup);
-      }
+
+      const targetCategory = btn.getAttribute('data-target');
+
+      skillBoxCards.forEach((card) => {
+        const cardCat = card.getAttribute('data-category');
+        if (targetCategory === 'all-skills' || cardCat === targetCategory) {
+          card.classList.remove('hide');
+          card.style.animation = 'fadeIn 0.4s ease forwards';
+        } else {
+          card.classList.add('hide');
+        }
+      });
     });
   });
 
-  function animateSkillBars(container) {
-    const progressFills = container.querySelectorAll('.progress-fill');
-    progressFills.forEach((fill) => {
-      fill.classList.add('animated');
-    });
-  }
-
-  const activeSkillGroup = document.querySelector('.skills-group.active');
-  if (activeSkillGroup) {
-    setTimeout(() => animateSkillBars(activeSkillGroup), 300);
-  }
-
   /* ============================================
-     8. PORTFOLIO FILTER CONTROLS
+     9. PORTFOLIO FILTER CONTROLS
      ============================================ */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const projectCards = document.querySelectorAll('.project-card-3d');
@@ -343,7 +359,20 @@
   });
 
   /* ============================================
-     9. PROJECT DETAILS MODAL
+     10. FAQ ACCORDION TOGGLE
+     ============================================ */
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const qBtn = item.querySelector('.faq-question');
+    qBtn.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      faqItems.forEach(i => i.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    });
+  });
+
+  /* ============================================
+     11. PROJECT DETAILS MODAL
      ============================================ */
   const modalOverlay = document.getElementById('projectModal');
   const modalClose = document.getElementById('modalClose');
@@ -351,25 +380,53 @@
   const openModalBtns = document.querySelectorAll('.open-modal-btn');
 
   const modalData = {
-    'modal-1': {
-      title: 'CyberSphere 3D Metaverse',
-      tech: 'Three.js, WebGL, React, GSAP',
-      desc: 'Full 3D interactive web environment featuring custom shaders, camera controls, dynamic lighting, and real-time audio visualizers.',
+    'proj-xvrino': {
+      title: 'Xvrino – AI English Speaking Application',
+      tech: 'Flutter, Firebase, OpenAI API, Dart',
+      features: ['AI-based Learning', 'Speaking Practice', 'Course Management', 'Learning Dashboard', 'Progress Tracking', 'Firebase Authentication'],
+      desc: 'A modern AI-powered English speaking application designed to help learners improve communication skills through interactive lessons and AI-based learning experiences.',
     },
-    'modal-2': {
-      title: 'Aether Pro E-Commerce',
-      tech: 'Next.js, Node.js, Stripe, MongoDB',
-      desc: 'Complete e-commerce platform with 3D product viewables, multi-currency support, automated checkout, and real-time inventory sync.',
+    'proj-coaching': {
+      title: 'Coaching Institute Management Website',
+      tech: 'Full Stack, Node.js, Admin Panel, SEO',
+      features: ['Student Registration', 'Course Management', 'Faculty Profiles', 'Online Admission', 'Study Materials', 'Notice Board', 'Admin Dashboard'],
+      desc: 'Designed and developed a complete coaching institute management website for educational organizations to manage admissions, courses, and announcements.',
     },
-    'modal-3': {
-      title: 'Nexus AI Intelligence Suite',
-      tech: 'Python, FastAPI, Three.js, OpenAI',
-      desc: 'Enterprise analytics dashboard featuring 3D data visualization grids, AI summary generation, and predictive chart metrics.',
+    'proj-clinic': {
+      title: 'Clinic Management Website',
+      tech: 'HTML5, CSS3, JavaScript, Bootstrap',
+      features: ['Doctor Profiles', 'Appointment Information', 'Services List', 'Patient Info Portal', 'SEO Friendly'],
+      desc: 'Developed a professional website for clinics to establish an online presence and simplify doctor-patient communication and appointment scheduling.',
     },
-    'modal-4': {
-      title: 'PulseFit Mobile Ecosystem',
-      tech: 'React Native, Expo, Firebase',
-      desc: 'Mobile-first application built for iOS & Android with 60 FPS performance, offline data sync, and 3D fitness progress models.',
+    'proj-news': {
+      title: 'Live News Portal Website',
+      tech: 'REST APIs, JavaScript ES6+, Responsive CSS',
+      features: ['Live News Feed', 'API Integration', 'Category Filter', 'Real-time Search', 'Fast Loading Performance'],
+      desc: 'Created a modern news website using external APIs to provide real-time news updates across sports, tech, entertainment, and world news.',
+    },
+    'proj-edu': {
+      title: 'Educational Materials Application',
+      tech: 'Flutter, PDF Reader, Material UI',
+      features: ['Subject Notes', 'PDF Study Materials', 'Course Content Organizers', 'Easy Categorization'],
+      desc: 'Built an application that provides students with centralized educational resources, notes, and downloadable study guides in one place.',
+    },
+    'proj-homeauto': {
+      title: 'Smart Home Automation System',
+      tech: 'ESP8266 Microcontroller, Blynk IoT, Relays',
+      features: ['Remote Device Control', 'Wi-Fi Based Automation', 'Mobile Control App', 'Relay Switching', 'Real-time Monitoring'],
+      desc: 'Designed and developed a smart home automation system using ESP8266 Wi-Fi modules and Blynk platform to remotely toggle appliances.',
+    },
+    'proj-agri': {
+      title: 'Smart Agriculture Monitoring System',
+      tech: 'ESP8266, Soil/Temp Sensors, IoT Dashboard',
+      features: ['Sensor Monitoring', 'Real-time Data Streaming', 'Remote Telemetry', 'IoT Dashboard'],
+      desc: 'Developed an IoT-based agriculture solution using ESP8266 and sensors to monitor farming environmental conditions remotely.',
+    },
+    'proj-gas': {
+      title: 'Smart Gas Detection System',
+      tech: 'ESP8266, Gas Leak Sensor, Alert Buzzer',
+      features: ['Gas Leakage Detection', 'Sensor Integration', 'Alert Notifications', 'Real-time IoT Safety'],
+      desc: 'Built an IoT safety system capable of detecting gas leakage instantly and dispatching real-time notifications for user safety.',
     },
   };
 
@@ -379,10 +436,16 @@
       const data = modalData[modalKey];
 
       if (data && modalOverlay && modalBody) {
+        const featureListHtml = data.features ? data.features.map(f => `<span class="focus-pill" style="margin: 2px;">✓ ${f}</span>`).join('') : '';
+
         modalBody.innerHTML = `
           <h3 style="font-size: 1.5rem; margin-bottom: 0.8rem; color: var(--primary-glow);">${data.title}</h3>
-          <p style="font-size: 0.85rem; color: var(--accent); margin-bottom: 1.2rem; font-weight: 600;">Stack: ${data.tech}</p>
-          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.8rem;">${data.desc}</p>
+          <p style="font-size: 0.85rem; color: var(--accent); margin-bottom: 1rem; font-weight: 600;">Stack: ${data.tech}</p>
+          <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 1.4rem;">${data.desc}</p>
+          <div style="margin-bottom: 1.8rem;">
+            <strong style="display: block; font-size: 0.85rem; color: var(--text-main); margin-bottom: 0.5rem;">Key Features:</strong>
+            <div style="display: flex; flex-wrap: wrap; gap: 4px;">${featureListHtml}</div>
+          </div>
           <a href="#contact" class="btn btn-primary btn-sm" onclick="document.getElementById('projectModal').classList.remove('open')">Inquire Project <i class="fas fa-arrow-right"></i></a>
         `;
         modalOverlay.classList.add('open');
@@ -396,14 +459,100 @@
     });
   }
 
-  if (modalOverlay) {
-    modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) modalOverlay.classList.remove('open');
+  /* ============================================
+     12. RESUME MODAL VIEWER
+     ============================================ */
+  const resumeModal = document.getElementById('resumeModal');
+  const resumeModalClose = document.getElementById('resumeModalClose');
+  const navViewResumeBtn = document.getElementById('navViewResumeBtn');
+  const heroViewResumeBtn = document.getElementById('heroViewResumeBtn');
+
+  function openResume() {
+    if (resumeModal) resumeModal.classList.add('open');
+  }
+
+  if (navViewResumeBtn) navViewResumeBtn.addEventListener('click', openResume);
+  if (heroViewResumeBtn) heroViewResumeBtn.addEventListener('click', openResume);
+  if (resumeModalClose) resumeModalClose.addEventListener('click', () => resumeModal.classList.remove('open'));
+
+  /* ============================================
+     13. FLOATING AI CHATBOT ASSISTANT ("ASK SUNIL AI")
+     ============================================ */
+  const aiChatbotToggle = document.getElementById('aiChatbotToggle');
+  const aiChatbotWindow = document.getElementById('aiChatbotWindow');
+  const aiChatClose = document.getElementById('aiChatClose');
+  const aiChatMessages = document.getElementById('aiChatMessages');
+  const aiChatForm = document.getElementById('aiChatForm');
+  const aiChatInput = document.getElementById('aiChatInput');
+  const chatChips = document.querySelectorAll('.chat-chip');
+
+  if (aiChatbotToggle && aiChatbotWindow) {
+    aiChatbotToggle.addEventListener('click', () => {
+      aiChatbotWindow.classList.toggle('open');
     });
+
+    if (aiChatClose) {
+      aiChatClose.addEventListener('click', () => {
+        aiChatbotWindow.classList.remove('open');
+      });
+    }
+
+    const aiAnswers = {
+      skills: "Sunil specializes in **AI Agents, Prompt Engineering, Flutter App Dev, Node.js Full Stack, ESP8266 IoT Systems, and n8n Automations**!",
+      projects: "Sunil has built 8 real projects including **Xvrino AI App, Coaching Institute Website, Clinic Management, News Portal, and Smart IoT Systems**!",
+      contact: "You can reach Sunil via Email: **sunilkumar8433256@gmail.com** or Phone/WhatsApp: **+91 9508008724**.",
+      hire: "Yes! Sunil is actively available for **Freelance Projects, Internships, Full-Time Roles, and AI Consultations**!",
+    };
+
+    function appendMessage(text, isUser = false) {
+      const msgDiv = document.createElement('div');
+      msgDiv.className = `chat-msg ${isUser ? 'user-msg' : 'bot-msg'}`;
+      msgDiv.innerHTML = `<p>${text}</p>`;
+      aiChatMessages.appendChild(msgDiv);
+      aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+    }
+
+    chatChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        const qKey = chip.getAttribute('data-q');
+        const userText = chip.textContent;
+        appendMessage(userText, true);
+
+        setTimeout(() => {
+          appendMessage(aiAnswers[qKey] || "Sunil Kumar is a Computer Science Engineering student skilled in AI, Full Stack, Flutter & IoT.");
+        }, 500);
+      });
+    });
+
+    if (aiChatForm) {
+      aiChatForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const text = aiChatInput.value.trim();
+        if (!text) return;
+
+        appendMessage(text, true);
+        aiChatInput.value = '';
+
+        setTimeout(() => {
+          const lower = text.toLowerCase();
+          if (lower.includes('project') || lower.includes('work')) {
+            appendMessage(aiAnswers.projects);
+          } else if (lower.includes('skill') || lower.includes('tech') || lower.includes('flutter')) {
+            appendMessage(aiAnswers.skills);
+          } else if (lower.includes('contact') || lower.includes('email') || lower.includes('phone')) {
+            appendMessage(aiAnswers.contact);
+          } else if (lower.includes('hire') || lower.includes('job') || lower.includes('freelance')) {
+            appendMessage(aiAnswers.hire);
+          } else {
+            appendMessage("Thanks for asking! Sunil Kumar is an AI Engineer and Full Stack Developer. Feel free to contact him at sunilkumar8433256@gmail.com!");
+          }
+        }, 600);
+      });
+    }
   }
 
   /* ============================================
-     10. DESKTOP CUSTOM POINTER
+     14. DESKTOP CUSTOM POINTER
      ============================================ */
   const cursorDot = document.getElementById('cursorDot');
   const cursorRing = document.getElementById('cursorRing');
@@ -419,7 +568,7 @@
   }
 
   /* ============================================
-     11. CONTACT FORM HANDLER
+     15. CONTACT FORM HANDLER
      ============================================ */
   const contactForm = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
@@ -429,7 +578,7 @@
       e.preventDefault();
       formStatus.innerHTML = '<span class="form-status success"><i class="fas fa-spinner fa-spin"></i> Sending message...</span>';
       setTimeout(() => {
-        formStatus.innerHTML = '<span class="form-status success"><i class="fas fa-check-circle"></i> Message sent successfully! I will reply shortly.</span>';
+        formStatus.innerHTML = '<span class="form-status success"><i class="fas fa-check-circle"></i> Thank you! Sunil Kumar will respond to your message shortly.</span>';
         contactForm.reset();
         setTimeout(() => {
           formStatus.innerHTML = '';
@@ -438,15 +587,5 @@
     });
   }
 
-  /* ============================================
-     12. RESUME DOWNLOAD BUTTON
-     ============================================ */
-  const downloadCVBtn = document.getElementById('downloadCVBtn');
-  if (downloadCVBtn) {
-    downloadCVBtn.addEventListener('click', () => {
-      alert('📄 Download Sunil Resume PDF: Ready!');
-    });
-  }
-
-  console.log('%c🚀 3D Portfolio Loaded Successfully | Single Directory Mode', 'color: #3ecfcf; font-weight: bold; font-size: 14px;');
+  console.log('%c🚀 Sunil Kumar Masterpiece 3D Portfolio Active', 'color: #3ecfcf; font-weight: bold; font-size: 14px;');
 })();
